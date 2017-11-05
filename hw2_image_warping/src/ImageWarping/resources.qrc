@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>Resources/copy.png</file>
+        <file>Resources/cut.png</file>
+        <file>Resources/new.png</file>
+        <file>Resources/open.png</file>
+        <file>Resources/paste.png</file>
+        <file>Resources/save.png</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>Resources/MonaLisa.bmp</file>
+        <file>Resources/warp_test.bmp</file>
+        <file>Resources/warp1.bmp</file>
+    </qresource>
+</RCC>
