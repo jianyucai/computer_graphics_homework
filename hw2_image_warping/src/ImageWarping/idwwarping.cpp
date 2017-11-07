@@ -298,7 +298,7 @@ QImage IdwWarping::warp(){
     // fill the new warped image
     for (int i=0; i<(image->width()); i++){
         for (int j=0; j<(image->height()); j++){
-            warped_image.setPixel(int(pixel_x[i*(image->width())+j]), int(pixel_y[i*(image->width())+j]), image->pixel(i, j));
+            warped_image.setPixel(int(pixel_x[i*(image->height())+j]), int(pixel_y[i*(image->height())+j]), image->pixel(i, j));
         }
     }
 

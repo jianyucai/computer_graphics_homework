@@ -20,8 +20,8 @@ private:
     QImage* image;
     vector<QPoint> p_list;
     vector<QPoint> q_list;
-    vector<double> t_list;
     */
+    vector<double> t_list;
     int control_point_num;
     int mode = 0;
     int mu = 2;

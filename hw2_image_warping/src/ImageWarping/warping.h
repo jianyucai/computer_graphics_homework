@@ -21,7 +21,6 @@ protected:
     QImage* image;
     vector<QPoint> p_list;
     vector<QPoint> q_list;
-    vector<double> t_list;
 
 
 };

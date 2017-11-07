@@ -90,7 +90,7 @@ void RbfWarping::compute_r(){
                 min_element(begin(control_point_distance[i]), end(control_point_distance[i]));
         double smallest = *smallest_iter;
 
-        r_list.push_back(smallest);
+        r_list[i] = smallest;        
     }
 }
 
@@ -141,8 +141,8 @@ void RbfWarping::compute_alpha(){
     VectorXd alpha_2 = A2.colPivHouseholderQr().solve(b2);
 
     for(int i=0; i<control_point_num; ++i){
-        alpha_list.push_back(alpha_1(i, 0));
-        alpha_list.push_back(alpha_2(i, 0));
+        alpha_list[2*i] = alpha_1(i, 0);
+        alpha_list[2*i+1] = alpha_2(i, 0);
     }
 }
 
@@ -227,7 +227,7 @@ QImage RbfWarping::warp(){
     // fill the new warped image
     for (int i=0; i<(image->width()); i++){
         for (int j=0; j<(image->height()); j++){
-            warped_image.setPixel(int(pixel_x[i*(image->width())+j]), int(pixel_y[i*(image->width())+j]), image->pixel(i, j));
+            warped_image.setPixel(int(pixel_x[i*(image->height())+j]), int(pixel_y[i*(image->height())+j]), image->pixel(i, j));
         }
     }
 
