@@ -41,7 +41,7 @@ So, we need to fill in those white gaps. I choose a very simple algorithm, for e
 ## Experiment
 A simple experiment is implemented on the famous painting: MonaLisa.
 
-![](images/Monalisa_composed.png)
+![](images/Monalisa_composed.jpg)
 
 (a) is the original image.
 (b) shows the control points (marked in red color). (c) is the warped image using IDW algorithm. (d) is the warped image using RBF algorithm.
