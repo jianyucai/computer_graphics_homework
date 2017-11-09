@@ -48,7 +48,34 @@ A simple experiment is implemented on the famous painting: MonaLisa.
 
 From the images, wo may infer that IDW is more balanced in warping, while RBF may be more wild. However, the image using IDW appears to have more unhandled white gaps than RBF, this may be compensated by using more advanced algorithms to handle White Gap Problem, rather than just looking for the nearest point.
 
+## Algorithm Complexity
+**m** and **n** is the width and height of an image separatelt, and **k** is the number of control points **p**.
+
+In the codes of IDW, I directly used the answer to the linear  equations provided in paper [2], ranther than using Eigen to solve it. While in the codes of RBF, I used Eigen to solve linear equations.
+
+Obviously, those 2 methods have diffrent time complexities, and it is not always that we can solve the equations by hand and type the answers into computers. So, I assume now, all linear equations are solved by Eigen, which uses maxtrix operation.
+
+There are diffrent methods to solve linear quations in Eigen, each may have different time complexity. I choose **ColPivHouseholderQR**, which has rather good speed(++) and high accuracy(+++).
+
+QR, in general, takes *O(2\*a\*b^2)* if the size of the matrix is (a, b).
+### IDW
+For a warping opration using IDW, there are 2 stages:
+
+1. compute the matrix *T*, which takes *O(k^2)* to compute the parameter, and *O(2\*4\*4^2)=O(1)*
+2. do the warping opration for all points in the image, which takes *O(m\*n\*k)*.
+
+So, the total time complexity is *O(k^2 + m\*n\*k)*.
+
+### RBF 
+For a warping operation using RBF, there are 3 stages:
  
+1. compute r for each control point, which takes *O(k^2)*.
+2. compute alpha matrix, which takes *O(2\*k\*k^2)=O(k^3)*.
+3. do the warping operation for all points in the image, which takes *O(m\*n\*k)*.
+
+So, the total time complexity is *O(k^3 + m\*n\*k)*.
+
+
 
 ## Reference
  
