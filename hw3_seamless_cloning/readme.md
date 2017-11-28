@@ -31,12 +31,20 @@ With the idea ahead, the basic idea of Poisson Image Cloning is, First, stores t
 ## Dependency
 **QT 5.7.1** is used for compiling and running this program.
 
-**Eigen** is used for solving linear equations, it is already included in the project (./Eigen)
+**Eigen** is used for solving linear equations, it is already included in the project (./Eigen). Sparse Matrix is used in this project.
 
 ## Experiment
-For the limitation in time, I only realized selecting cloned zone with rectangles. Besides, the pre-processing part of images take most of the time, this part canbe optimized.
+For the limitation in time, I only realized selecting cloned zone with rectangles. 
 
-The experiment is the same in Image Cloning part of paper [1].
+The computation in seamless cloning can be devided into 3 states. 
+
+1. compute the divergence of selected zone when copy button is clicked.
+2. fill in the parameter matrix A and vector b when paste button is clicked.
+3. solve the linear equations when clone button is clicked.
+
+I initially chose to compute all those stages at one time when clone button is clicked, which is stupid. But I have no deisre to modify the code. Just mark here to illustrtate that I know this stuff.
+
+The experiment result is the same in Image Cloning part of paper [1].
 
 ## Reference
 [1] *Poisson Image Editing, Microsoft Search UK* 
