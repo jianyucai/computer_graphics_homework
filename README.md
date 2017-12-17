@@ -9,3 +9,6 @@ realization of some simple algorithms(IDW & RBF) in Image Warping
 
 ## Homework 3: Seamless Cloning
 realization of simple version of Seameless Cloning
+
+## Homework 4: Image Warping with Barycentric Coordinates
+realizations of Image Warping with Triangulation and Barycentric Coordinates
