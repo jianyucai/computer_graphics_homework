@@ -12,3 +12,6 @@ realization of simple version of Seameless Cloning
 
 ## Homework 4: Image Warping with Barycentric Coordinates
 realizations of Image Warping with Triangulation and Barycentric Coordinates
+
+## Homework 5: Minimal Surface
+realizations of the generation of Minimal Surface
